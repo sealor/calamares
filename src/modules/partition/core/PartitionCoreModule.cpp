@@ -425,8 +425,8 @@ PartitionCoreModule::createVolumeGroup( QString& vgName, QVector< const Partitio
 
     DeviceInfo* deviceInfo = new DeviceInfo( device );
     deviceInfo->partitionModel->init( device, osproberEntries() );
-    m_deviceModel->addDevice( device );
     m_deviceInfos << deviceInfo;
+    m_deviceModel->addDevice( device );
 
     deviceInfo->makeJob< CreateVolumeGroupJob >( vgName, pvList, peSize );
     refreshAfterModelChange();
